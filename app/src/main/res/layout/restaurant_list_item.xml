@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:clickable="true"
+    android:focusable="true"
+    app:contentPadding="8dp"
+    app:cardElevation="8dp"
+    android:layout_margin="8dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:id="@+id/imgResLogo"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_house_search"/>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/imgResLogo"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtResName"
+                android:textSize="18sp"
+                android:text="Restaurant Name"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtMenuCount"
+                android:layout_below="@id/txtResName"
+                android:textSize="16sp"
+                android:text="5 menus created"
+                android:layout_marginTop="5dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtDate"
+                android:layout_below="@id/txtResName"
+                android:layout_alignParentEnd="true"
+                android:textSize="16sp"
+                android:text="05/01/2021"
+                android:layout_marginTop="5dp"/>
+
+        </RelativeLayout>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnOptions"
+            android:src="@drawable/ic_more"
+            android:layout_alignParentEnd="true"/>
+
+    </RelativeLayout>
+
+</com.google.android.material.card.MaterialCardView>

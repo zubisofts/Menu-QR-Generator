@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraintLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.menu_activity.EditAppearanceFragment">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="80dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="16dp"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="@string/design_your_qr_menu"
+                android:textColor="@android:color/black"
+                android:layout_alignParentStart="true"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+        <com.tiper.MaterialSpinner
+            android:id="@+id/edtHeadingFont"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Select Header Font"
+            android:layout_marginTop="32dp"
+            android:layout_marginBottom="8dp"
+            app:boxStrokeColor="@android:color/darker_gray"
+            app:spinnerMode="bottomsheet" />
+
+        <com.tiper.MaterialSpinner
+            android:id="@+id/edtTextFont"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Select Header Font"
+            android:layout_marginTop="32dp"
+            android:layout_marginBottom="8dp"
+            app:boxStrokeColor="@android:color/darker_gray"
+            app:spinnerMode="bottomsheet" />
+
+        <com.tiper.MaterialSpinner
+            android:id="@+id/edtTextAlignment"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Select Header Font"
+            android:layout_marginTop="32dp"
+            android:layout_marginBottom="8dp"
+            app:boxStrokeColor="@android:color/darker_gray"
+            app:spinnerMode="bottomsheet" />
+
+<!--        <com.google.android.material.textfield.TextInputLayout-->
+<!--            android:id="@+id/inputHeadingFont"-->
+<!--            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="32dp"-->
+<!--            android:layout_marginBottom="8dp"-->
+<!--            android:hint="Select heading font">-->
+
+<!--            <com.google.android.material.textfield.MaterialAutoCompleteTextView-->
+<!--                android:id="@+id/edtHeadingFont"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:inputType="textEmailAddress"-->
+<!--                android:padding="16dp" />-->
+
+
+<!--        </com.google.android.material.textfield.TextInputLayout>-->
+
+<!--        <com.google.android.material.textfield.TextInputLayout-->
+<!--            android:id="@+id/inputTextFont"-->
+<!--            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="8dp"-->
+<!--            android:layout_marginBottom="8dp"-->
+<!--            android:hint="Select text font">-->
+
+<!--            <com.google.android.material.textfield.MaterialAutoCompleteTextView-->
+<!--                android:id="@+id/edtTextFont"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:inputType="textEmailAddress"-->
+<!--                android:padding="16dp" />-->
+
+
+<!--        </com.google.android.material.textfield.TextInputLayout>-->
+
+<!--        <com.google.android.material.textfield.TextInputLayout-->
+<!--            android:id="@+id/inputTextAlignment"-->
+<!--            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="8dp"-->
+<!--            android:layout_marginBottom="8dp"-->
+<!--            android:hint="Text Alignment">-->
+
+<!--            <com.google.android.material.textfield.MaterialAutoCompleteTextView-->
+<!--                android:id="@+id/edtTextAlignment"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:inputType="textEmailAddress"-->
+<!--                android:padding="16dp" />-->
+
+<!--        </com.google.android.material.textfield.TextInputLayout>-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="8dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Header Color"
+                    android:textColor="@android:color/black" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/btnHeaderColor"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:cardElevation="8dp"
+                    app:strokeColor="@android:color/darker_gray"
+                    app:strokeWidth="1dp"
+                    app:cardBackgroundColor="@android:color/black" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Text Color"
+                    android:textColor="@android:color/black" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/btnTextColor"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:cardElevation="8dp"
+                    app:strokeColor="@android:color/darker_gray"
+                    app:strokeWidth="1dp"
+                    app:cardBackgroundColor="@android:color/black" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Background Color"
+                android:textColor="@android:color/black" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/btnBgColor"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:clickable="true"
+                android:focusable="true"
+                app:cardElevation="8dp"
+                app:strokeColor="@android:color/darker_gray"
+                app:strokeWidth="1dp"
+                app:cardBackgroundColor="@android:color/black" />
+
+            <com.tiper.MaterialSpinner
+                android:id="@+id/edtTheme"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Select Theme Style"
+                android:layout_marginTop="32dp"
+                app:boxStrokeColor="@android:color/darker_gray"
+                app:spinnerMode="bottomsheet" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+<!--    <com.google.android.material.button.MaterialButton-->
+<!--        android:id="@+id/btnContinue"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_gravity="bottom"-->
+<!--        android:layout_marginHorizontal="16dp"-->
+<!--        android:layout_marginVertical="16dp"-->
+<!--        android:padding="16dp"-->
+<!--        android:text="Continue"-->
+<!--        android:textAllCaps="false" />-->
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnContinue"
+        android:clickable="true"
+        android:focusable="true"
+        app:contentPadding="16dp"
+        app:cardCornerRadius="0dp"
+        app:cardBackgroundColor="@color/primaryColor"
+        android:layout_gravity="bottom">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtSave"
+            android:textSize="16sp"
+            android:text="Continue"
+            android:textColor="@android:color/white"
+            android:layout_gravity="center"/>
+
+
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

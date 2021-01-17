@@ -13,6 +13,12 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
+import com.facebook.AccessToken;
+import com.facebook.CallbackManager;
+import com.facebook.FacebookCallback;
+import com.facebook.FacebookException;
+import com.facebook.login.LoginManager;
+import com.facebook.login.LoginResult;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -27,6 +33,8 @@ import com.zubisofts.menuqrgenerator.model.User;
 import com.zubisofts.menuqrgenerator.ui.main.MainActivity;
 import com.zubisofts.menuqrgenerator.viewmodel.MainViewModel;
 
+import java.util.Arrays;
+
 public class LoginActivity extends AppCompatActivity {
 
     private static final String TAG = "LoginActivity";
@@ -38,6 +46,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private MainViewModel mainViewModel;
     private GoogleSignInClient signInClient;
+    private CallbackManager callbackManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +54,7 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         mainViewModel = new ViewModelProvider.NewInstanceFactory().create(MainViewModel.class);
+        callbackManager = CallbackManager.Factory.create();
 
         edtEmail = findViewById(R.id.edtEmail);
         edtPassword = findViewById(R.id.edtPassword);
@@ -81,6 +91,8 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+        findViewById(R.id.btnFacebook).setOnClickListener(v -> handleFacebookLogin());
+
         findViewById(R.id.txtSignup).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -89,6 +101,31 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
     }
+
+    private void handleFacebookLogin() {
+
+        LoginManager.getInstance().logInWithReadPermissions(this, Arrays.asList("email", "public_profile"));
+        LoginManager.getInstance().registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
+            @Override
+            public void onSuccess(LoginResult loginResult) {
+                AccessToken accessToken = loginResult.getAccessToken();
+                mainViewModel.loginUserWithFacebook(accessToken);
+            }
+
+
+            @Override
+            public void onCancel() {
+
+            }
+
+            @Override
+            public void onError(FacebookException error) {
+                Log.i(TAG, "onError: "+error.getMessage());
+            }
+        });
+
+    }
+
 
     private void login() {
         String email = edtEmail.getText().toString();
@@ -137,6 +174,7 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+        callbackManager.onActivityResult(requestCode, resultCode, data);
         if (requestCode == RC_SIGN_IN && resultCode == RESULT_OK) {
             // The Task returned from this call is always completed, no need to attach
             // a listener.

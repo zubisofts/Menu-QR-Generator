@@ -3,6 +3,7 @@ package com.zubisofts.menuqrgenerator.viewmodel;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
+import com.facebook.AccessToken;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.zubisofts.menuqrgenerator.model.Response;
 import com.zubisofts.menuqrgenerator.repository.AuthRepository;
@@ -26,6 +27,12 @@ public class MainViewModel extends ViewModel {
     public void loginUserWithGoogle(GoogleSignInAccount result) {
 
         AuthRepository.loginUserWithGoogle(result,userResponse);
+
+    }
+
+    public void loginUserWithFacebook(AccessToken accessToken) {
+
+        AuthRepository.loginUserWithFacebook(accessToken,userResponse);
 
     }
 }
